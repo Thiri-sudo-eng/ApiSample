@@ -1,15 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Linq;
-using System;
-using System.IO;
-using Newtonsoft.Json;
+﻿using ApiSample.Entity;
 using ApiSample.Model;
-using ApiSample.Entity;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Xml.Linq;
-using System.Data.SqlClient;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
 
 namespace ApiSample.Controllers
 {
@@ -32,7 +27,7 @@ namespace ApiSample.Controllers
                 string json = r.ReadToEnd();
                 List<PayloadInfo> payload = JsonConvert.DeserializeObject<List<PayloadInfo>>(json);
                 string result = SaveData.Save(payload);
-                return json;
+                return result;
             }
         }
     }

@@ -1,13 +1,7 @@
 ﻿using ApiSample.Model;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using NLog.Web;
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.SqlClient;
-using System.Reflection.Metadata.Ecma335;
-using System.Transactions;
-using System.Xml.Linq;
 
 namespace ApiSample.Entity
 {
@@ -43,7 +37,6 @@ namespace ApiSample.Entity
                 transaction.Rollback();
                 con.Close();
                 result = ex.Message;
-
             }
             return result;
         }
